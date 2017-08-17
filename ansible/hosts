@@ -1,0 +1,4 @@
+[local]
+localhost   ansible_connection=local
+[remote]
+10.10.10.10 ansible_connection=ssh ansible_ssh_user=root
