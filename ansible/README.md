@@ -19,3 +19,10 @@ ansible all -m ping
 ansible local -m ping # Run command on local group hosts
 ansible remote -m ping # Run command on remote group hosts
 ```
+
+- 使用Facts获取信息
+获取host的主机信息
+
+``` bash
+ansible {{ hostname }} -m setup
+```

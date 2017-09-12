@@ -1,0 +1,9 @@
+---
+- name: register result
+  command: echo "test register result"
+  register: echo_result
+  ignore_errors: True
+- name: echo registered result
+  command: echo {{ echo_result }}
+- name: echo var in vars dir
+  command: echo {{ xxx }}
