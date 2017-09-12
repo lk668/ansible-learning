@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  vars:
+    dest_file: dest_test
+  # Set all task for damonl user
+  remote_user: damonl
+
+  tasks:
+    - name: echo hello world to ~/test
+      # Set a special task for damonl user
+      remote_user: damonl 
+      shell: echo "hello world" > ~/test
+      ignore_errors: True
+    - name: copy file to {{ dest_file }}
+      template: src=~/test dest=./{{ dest_file }}
+      notify:
+        - echo finish
+  # handlers: when all tasks finished, handler will be runned
+  # we should use notify to trigger the handler job. the handler only be
+  # tyriggered for once.
+  handlers:
+    - name: echo finish
+      shell: echo "finish" >> {{dest_file}}

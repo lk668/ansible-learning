@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  roles:
+  # roles的不同表现形式(会执行两次task test-1)
+    - test-1
+    - { role: test-1, tags: ["test-1"]}

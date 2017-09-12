@@ -1,0 +1,4 @@
+# 角色依赖
+---
+dependencies:
+  - {role: test-3}

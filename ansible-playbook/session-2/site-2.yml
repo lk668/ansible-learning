@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  # 如果你希望定义一些task，让他们在role之前或者之后执行，可以这样
+  # 当定义多个roles时，只执行最后一个roles
+  pre_tasks:
+    - shell: echo "pre test-2"
+  roles:
+    - {role: test-2}
+  tasks:
+    - shell: echo "in test-2"
+  post_tasks:
+    - shell: echo "after test-2"

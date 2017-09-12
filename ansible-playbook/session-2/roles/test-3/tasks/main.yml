@@ -1,0 +1,3 @@
+---
+- name: echo my name
+  command: echo {{ target }}
