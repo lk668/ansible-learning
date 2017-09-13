@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  # 如果你想关闭fact变量，只需添加如下代码
+  # gather_facts: no
+  roles:
+    - test-1

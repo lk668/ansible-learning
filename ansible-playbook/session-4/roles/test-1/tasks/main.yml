@@ -1,0 +1,5 @@
+---
+- name: echo the num<5 in [2,4,6,8,10]
+  command: echo {{ item }}
+  with_items: [2,4,6,8.10]
+  when: item < 5
